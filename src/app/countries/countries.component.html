@@ -1,0 +1,58 @@
+<!-- <button>+ NewCounty</button> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<button
+  style="margin: 50px; padding: 10px"
+  type="button"
+  class="btn btn-primary"
+  (click)="openPopup()">+ Country 
+</button> 
+<div *ngFor="let list of countryList" [ngStyle]="{'display':displaylist}">
+    <ul>
+<li>
+    {{list.Name}} 
+     <button id="remove" (click)="deleteRow(list.Name)" >
+     <i class="fa fa-trash-o" style="font-size:30px;color:gray"></i>
+    </button>
+   
+</li>
+
+    </ul>
+   
+</div>
+
+
+
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle}"> 
+  <div class="modal-dialog" role="document"> 
+    <div class="modal-content"> 
+      <div class="modal-header"> 
+        <h4 class="modal-title">Add New Country </h4> 
+      </div> 
+      <div class="modal-body"> 
+         
+        <input type="text" [(ngModel)]="CountryRecord.name"
+        name="name" placeholder="Enter Country Name" id="Countrydetails.Name" required>
+        </div>
+        <div class="modal-body">
+        <input type="text" [(ngModel)]="CountryRecord.ISO"
+        name="ISO" placeholder="Enter country ISO" id="Countrydetails.ISO" maxlength="2" required>
+  
+      </div> 
+      <div class="modal-footer"> 
+        <button type="button" class="btn btn-save" name = "Country_name" id="Country_iso"
+                (click)="SaveData()"> 
+          Save 
+        </button> 
+        <button type="button" class="btn btn-danger" 
+                (click)="closePopup()"> 
+          Close 
+        </button> 
+      </div> 
+    </div> 
+  </div> 
+</div>

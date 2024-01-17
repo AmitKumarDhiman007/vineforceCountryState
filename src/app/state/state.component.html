@@ -1,0 +1,101 @@
+<h3>State Page</h3>
+<!-- <div>
+<select class="form-control" title="Select Country" (change)="SelectCountry()"> 
+    <option disabled>Select Country</option>       
+    <option *ngFor="let list of countryList" value="list.Name" id="countryname">{{list.Name}}</option>  
+</select>  
+</div> -->
+<button
+  style="margin: 50px; padding: 10px"
+  type="button"
+  class="btn btn-primary"
+  (click)="openPopup()">+ state 
+</button> 
+
+<div
+class="modal"
+tabindex="-1"
+role="dialog"
+[ngStyle]="{'display':displayStyle}"> 
+<div class="modal-dialog" role="document"> 
+  <div class="modal-content"> 
+    <div class="modal-header"> 
+      <h4 class="modal-title">Add New State </h4> 
+    </div> 
+ <div class="modal-body"> 
+   
+    <div>
+        <select class="form-control"> 
+            <option disabled>Select Country</option>       
+            <option *ngFor="let list of countryList">{{list.Name}}</option>  
+        </select>  
+        </div> 
+
+      <!-- <input type="text" placeholder="Enter State Name" [(ngModel)]="STATERecord.STATENAME"
+      name="name" 
+      id="Countrydetails.Name"
+      > -->
+</div>
+<div>
+
+    <input type="text" placeholder="Enter State Name" [(ngModel)]="STATERecord.STATENAME"
+      name="name" 
+      id="Countrydetails.Name"
+      > 
+</div> 
+<div class="modal-body"> 
+  
+      <input type="text" placeholder="Enter State ISO"  [(ngModel)]="STATERecord.ISO"
+      name="ISO"  id="Countrydetails.ISO">
+  </div>
+ <div class="modal-body"> 
+    
+      <input type="text" placeholder="Enter State COUNTRYISO"  [(ngModel)]="STATERecord.COUNTRYID"
+      name="COUNTRYID"  id="Countrydetails.COUNTRYID">
+
+</div> 
+
+    <div class="modal-footer"> 
+      <button type="button" class="btn btn-save" name = "Country_name" id="Country_iso"
+              (click)="SaveData()"> 
+        Save 
+      </button> 
+      <button type="button" class="btn btn-danger" 
+              (click)="closePopup()"> 
+        Close 
+      </button> 
+    </div> 
+   
+</div> 
+</div>
+</div>
+
+
+<div class="modal-header"> 
+    <h4 class="modal-title">Search State By COUNTRYISO </h4> 
+  </div> 
+<div class="modal-body"> 
+         
+    <input type="text" [(ngModel)]="CountryRecord.ISO" placeholder="Enter CountryISO"
+    name="name" id="Countrydetails.ISO" maxlength="2" required>
+
+  <!-- </div> 
+  <div class="modal-footer">  -->
+    <button type="button" class="btn btn-save"
+            (click)="SearchCountry()"> 
+      Search 
+    </button>
+    </div>
+
+    <div *ngFor="let list of StateList">
+        <ul>
+    <li>
+        {{list.STATENAME}}
+        <button id="remove" (click)="deleteRow(list.STATENAME)" >
+            <i class="fa fa-trash-o" style="font-size:30px;color:gray"></i>
+           </button>
+    </li>    
+        </ul>
+    </div>
+
+  

@@ -1,0 +1,32 @@
+<h3 style="align-content: center;"><u>COUNTRYISO</u></h3>
+
+<!-- <div *ngFor="let list of countryList" [ngStyle]="{'display':displaylist}">
+    <ul>
+<li>
+    {{list.Name}}
+</li>
+
+    </ul>
+   
+</div> -->
+
+
+
+<table>
+    <thead>
+      <tr>
+        <th>COUNTRY NAME</th>
+        <th>COUNTRY ISO</th>
+        <!-- <td class="mat-cell" *ngFor="let i of items">
+          {{i.percent}} %
+        </td> -->
+      </tr>
+    </thead>
+    <tbody *ngFor="let list of countryList" >
+      <tr>
+        <th>{{list.Name}}</th>
+        <th>{{list.ISO}}</th>
+        
+      </tr>
+    </tbody>
+  </table>
